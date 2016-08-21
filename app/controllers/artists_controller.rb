@@ -12,6 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
+    binding.pry
     @artist = Artist.new(artist_params)
 
     if @artist.save
@@ -47,6 +48,6 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-    params.require(:artist).permit(:name)
+    params.require(:artist).permit(:name, :artist_name)
   end
 end
